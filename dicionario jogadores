@@ -1,0 +1,24 @@
+jogadores = dict ()
+gols = list()
+jogadores['nome'] = input('Nome do jogador: ').title().strip()
+partida = int(input(f'Quantas partidas {jogadores["nome"]} jogou? '))
+qtd = 0
+
+for n in range(0, partida):
+    x = (int(input(f'Quantos gols na partida {n}? ')))
+    gols.append(x)
+    qtd = qtd + x
+    #ou somar a lista para acrescentar ao total dentro do dicionário
+    #jogador['total'] = sum(gols)
+jogadores['gols'] = gols
+jogadores['total'] = qtd
+print('='*40)
+print(jogadores)
+print('='*40)
+for k, v in jogadores.items():
+    print(f'O campo {k} tem o valor {v}')
+print('='*40)
+print(f'O jogador {jogadores["nome"]} jogou {partida} partidas')
+for i, v in enumerate(jogadores['gols']):
+    print(f'  => Na partida {i}, fez {v} gols.')
+print(f'Foi um total de {jogadores["total"]}')
